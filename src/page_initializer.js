@@ -1,6 +1,8 @@
+import { getNewProjectTitle } from "./todo_logic";
+
 // Initialize the page
 
-function component(newElement, newInnerHTML, newID) {
+let component = function(newElement, newInnerHTML, newID) {
     const element = document.createElement(newElement);
     element.innerHTML = newInnerHTML;
     element.setAttribute("id", newID);
@@ -9,10 +11,22 @@ function component(newElement, newInnerHTML, newID) {
 };
 
 let pageInitializer = function() {
-    const projectHolderDiv = component("div", 'projectHolderDiv', "projects");
+    // Project related HTML
+    const projectHolderDiv = component("div", '', "projects-list");
     document.getElementById("content").appendChild(projectHolderDiv);
 
-    const toDoListHolderDiv = component("div", "toDoListHolderDiv", "")
+    const newProjectButton = component('button', 'New Project', 'new-project-button');
+    document.getElementById("projects-list").appendChild(newProjectButton);
+    newProjectButton.addEventListener('click', function() {
+        getNewProjectTitle();
+    });
+
+
+    // ToDo related HTML
+    const toDoListHolderDiv = component("div", "toDoListHolderDiv", "todos-list");
+    document.getElementById("content").appendChild(toDoListHolderDiv);
+
+
 
     console.log("pageInitializer function ran..");
 };
