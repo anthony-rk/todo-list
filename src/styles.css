@@ -18,6 +18,13 @@ h1 {
     color: black;
 }
 
+.project-list-item {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
 #todos-list {
     float: right;
     width: 75%;

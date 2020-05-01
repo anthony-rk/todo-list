@@ -1,3 +1,5 @@
+import { refreshProjectsView } from "./dom_functions";
+
 // Define ToDo Objects and various related functions here
 let projectsArray = [];
 
@@ -54,7 +56,9 @@ let newProject = function(title) {
 
 let getNewProjectTitle = function() {
     let newProjectInputTitle = prompt('Please enter a new Project:', 'Personal Finance');
-    projectsArray.push(newProjectInputTitle);
+    // make project object with title from above
+    let newProjectToAdd = newProject(newProjectInputTitle)
+    projectsArray.push(newProjectToAdd);
 };
 
 // Function for creating new ToDoEntry

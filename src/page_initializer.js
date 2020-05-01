@@ -1,4 +1,5 @@
 import { getNewProjectTitle } from "./todo_logic";
+import { refreshProjectsView } from "./dom_functions";
 
 // Initialize the page
 
@@ -19,6 +20,7 @@ let pageInitializer = function() {
     document.getElementById("projects-list").appendChild(newProjectButton);
     newProjectButton.addEventListener('click', function() {
         getNewProjectTitle();
+        refreshProjectsView();
     });
 
 
